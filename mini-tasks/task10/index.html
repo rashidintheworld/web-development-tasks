@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>BMI Kalkulyatoru</title>
+</head>
+<body>
+
+<div id="calculator">
+    <h2>BMI Kalkulyatoru</h2>
+
+    <input type="number" id="height" placeholder="Boy ölçünü daxil edin" required>
+
+    <input type="number" id="weight" placeholder="Çəki daxil edin" required>
+
+    <select id="unit">
+        <option value="metric">Metric (kg, cm)</option>
+        <option value="imperial">Imperial (lbs, in)</option>
+    </select>
+
+    <button onclick="calculateBMI()">BMI Hesabla </button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateBMI() {
+        const heightInput = document.getElementById('height');
+        const weightInput = document.getElementById('weight');
+        const unitSelect = document.getElementById('unit');
+        const resultDiv = document.getElementById('result');
+
+        const height = parseFloat(heightInput.value);
+        const weight = parseFloat(weightInput.value);
+        const unit = unitSelect.value;
+
+        if (isNaN(height) || isNaN(weight)) {
+            resultDiv.innerHTML = 'Zəhmət olmasa düzgün kilo və boy ölçüsü daxil edin.';
+            return;
+        }
+
+        let bmi;
+
+        if (unit === 'metric') {
+            bmi = calculateMetricBMI(height, weight);
+        } else {
+            bmi = calculateImperialBMI(height, weight);
+        }
+
+        const classification = getBMIClassification(bmi);
+
+        resultDiv.innerHTML = `Sənin BMI: ${bmi.toFixed(2)} - ${classification}`;
+    }
+
+    function calculateMetricBMI(height, weight) {
+        return weight / ((height / 100) ** 2);
+    }
+
+    function calculateImperialBMI(height, weight) {
+        return (weight / (height ** 2)) * 703;
+    }
+
+    function getBMIClassification(bmi) {
+        if (bmi < 18.5) {
+            return 'Artıq çəkili';
+        } else if (bmi < 24.9) {
+            return 'Normal çəkili';
+        } else if (bmi < 29.9) {
+            return 'Aşağı çəkili';
+        } else {
+            return 'Obes';
+        }
+    }
+</script>
+
+</body>
+</html>

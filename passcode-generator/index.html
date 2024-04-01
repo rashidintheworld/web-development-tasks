@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Password Generator Application - Generate secure passwords with varying lengths and character types.">
+    <title>Şifrə yaratma tətbiqi</title>
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h1>Şifrə yaratma tətbiqi</h1>
+
+    <div class="inputBox">
+        <label class="hidden" for="passBox" aria-hidden="false">Yaranmış şifrə</label>
+        <input type="text" class="passBox" id="passBox" disabled>
+        <button class="copyButton" id="copyBtn">
+            <img id="copyIcon" src="assets/copy-icon.svg" alt="copy">
+        </button>
+    </div>
+    <div class="pass-indicator" id="passIndicator"></div>
+
+    <label class="hidden" aria-hidden="false" for="inputSlider">Şifrə uzunluğu</label>
+    <input type="range" min="1"
+           max="30" value="12"
+           step="1" class="inputSlider"
+           id="inputSlider">
+    <div class="row">
+        <strong>Şifrə uzunluğu</strong>
+        <strong id="sliderValue" class="sliderValue">12</strong>
+    </div>
+
+    <div class="row">
+        <label for="lowercase">Kiçik hərflər daxil olmaqla (a-z)</label>
+        <input type="checkbox" name="lowercase" id="lowercase" checked>
+    </div>
+
+    <div class="row">
+        <label for="uppercase">Böyük hərflər daxil olmaqla (A-Z)</label>
+        <input type="checkbox" name="uppercase" id="uppercase" checked>
+    </div>
+
+    <div class="row">
+        <label for="numbers">Rəqəmlər daxil olmaqla (0-9)</label>
+        <input type="checkbox" name="numbers" id="numbers" checked>
+    </div>
+
+    <div class="row">
+        <label for="symbols">Simvollar daxil olmaqla (@-*)</label>
+        <input type="checkbox" name="symbols" id="symbols">
+    </div>
+
+    <button class="genBtn" id="genBtn">Şifrə yarat</button>
+</main>
+<footer>
+    Made with ♥️ by <a href="https://github.com/rashidintheworld">Rashid Teymurlu</a>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
