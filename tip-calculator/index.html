@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tech Beans Cafe</h1>
+        <h1>by Rashid</h1>
+        <h2>Servis Haqqı Hesablayıcı</h2>
+        <p>Ümumi hesabı və servisin faiz miqdarını daxil edin.</p>
+        <label for="bill">Ümumi hesab : </label>
+        <input type="number" id="bill"> <br>
+        <label for="tip">Servis haqqının faizi : </label>
+        <input type="number" id="tip"> <br>
+        <button id="calculate" class="buttonn">
+            Hesabla
+            <span></span><span></span><span></span><span></span>
+        </button>
+
+        <label for="toggleProgrammer">Proqramçısan?</label>
+        <input type="checkbox" id="toggleProgrammer"> <br>
+
+        <div class="tip_amount">
+            <label for="tip_amount">Servisin Miqdarı : </label>
+            <span id="tip_amount"></span>
+        </div>
+        <div class="total">
+            <label for="total">Ümumi : </label>
+            <span id="total"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
